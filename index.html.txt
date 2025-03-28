@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>家庭饮食变迁调查报告</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+    <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+</head>
+<body>
+    <header>
+        <h1>改革开放以来家庭饮食变迁</h1>
+        <p>XX中学八年级社会实践活动成果展示</p >
+    </header>
+    <section id="timeline-embed" class="timeline-container"></section>
+    <script>
+        fetch('data/timeline.json')
+            .then(response => response.json())
+            .then(data => {
+                new TL.Timeline('timeline-embed', data);
+            });
+    </script>
+</body>
+</html>
+{
+  "events": [
+    {
+      "start_date": "1957",
+      "text": {
+        "headline": "计划经济时期粮油配给",
+        "text": "沈阳粮食供应站居民凭粮本购粮"
+      },
+      "media": {
+        "url": "images/1950-1970/food-ticket-1957.jpg",
+        "caption": "1957年沈阳粮站场景（来源：新华社）"
+      }
+    },
+    {
+      "start_date": "1984",
+      "text": {
+        "headline": "肉类消费普及",
+        "text": "广州海珠市场肉类专柜供应充足"
+      },
+      "media": {
+        "url": "images/1980-1990/meat-market-1984.jpg",
+        "caption": "1984年广州海珠市场（来源：中国照片档案馆）"
+      }
+    }
+  ]
+}
+<!-- 家庭故事部分 -->
+<section class="photo-section">
+  <h2>家庭餐桌的变迁</h2>
+  <div class="photo-collage">
+    <!-- 计划经济时期 -->
+    <figure>
+      < img src="images/1950-1970/family-dinner-1953.jpg" alt="1953年天津家庭团圆饭">
+      <figcaption>1953年：粗粮为主，菜品简单</figcaption>
+    </figure>
+    <!-- 改革开放初期 -->
+    <figure>
+      < img src="images/1980-1990/family-dinner-1984.jpg" alt="1984年家庭年夜饭">
+      <figcaption>1984年：肉类增加，菜品丰富</figcaption>
+    </figure>
+    <!-- 新世纪 -->
+    <figure>
+      < img src="images/2000-now/family-dinner-2023.jpg" alt="2023年家庭聚餐">
+      <figcaption>2023年：全球化食材，外卖常见</figcaption>
+    </figure>
+  </div>
+</section>
+<section class="swiper-section">
+  <h2>野菜宴的今昔对比</h2>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        < img src="images/special/wild-veggies-1970.jpg" alt="1970年代野菜充饥">
+        <p>1970年代：野菜添加玉米面充饥</p >
+      </div>
+      <div class="swiper-slide">
+        < img src="images/special/wild-veggies-2018.jpg" alt="2018年野菜宴">
+        <p>2018年青岛海琴社区野菜宴</p >
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    pagination: { el: ".swiper-pagination", clickable: true },
+    autoplay: { delay: 3000 }
+  });
+</script>
